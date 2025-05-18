@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Envase</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h2>Registro de Envase</h2>
+    <form method="post" action="/registrar">
+        <label>Cliente:</label>
+        <select name="cliente_id">
+            {% for cliente in clientes %}
+                <option value="{{ cliente[0] }}">{{ cliente[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label>Total Envasado:</label><input type="number" name="total"><br>
+        <label>Recusados:</label><input type="number" name="recusados"><br>
+        <label>Quebrados:</label><input type="number" name="quebrados"><br><br>
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>
